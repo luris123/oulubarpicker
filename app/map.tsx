@@ -51,7 +51,7 @@ export default function Map() {
         setBars(response.data.results);
         if ("next_page_token" in response.data) {
           //wait for 5 seoconds
-          await new Promise((resolve) => setTimeout(resolve, 5000));
+          //await new Promise((resolve) => setTimeout(resolve, 5000));
           let next_page_token = response.data.next_page_token;
           let response2 = await axios.get(
             proxyurl +
@@ -61,7 +61,7 @@ export default function Map() {
           setMoreBars(response2.data.results);
 
           if ("next_page_token" in response2.data) {
-            await new Promise((resolve) => setTimeout(resolve, 5000));
+            //await new Promise((resolve) => setTimeout(resolve, 5000));
             let next_page_token = response2.data.next_page_token;
             let response3 = await axios.get(
               proxyurl +
